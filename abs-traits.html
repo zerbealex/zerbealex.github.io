@@ -1,0 +1,658 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>alexandrezerb&eacute; : abs-traits</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.zerbe {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #5A606E;
+}
+body {
+	background-color: #dfe3e6;
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+img, table {
+  max-width: 100%;
+  height: auto;
+}
+.Style4 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.style5 {font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.Style7 {
+	font-size: 14px;
+	font-style: italic;
+}
+.responsive-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table td {
+  word-break: break-word;
+}
+ .menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* aligne les images par le bas */
+  gap: 0px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.menu-nav img {
+  height: 100px;       /* hauteur identique pour tous */
+  width: auto;         /* largeur auto = conserve le ratio */
+  display: block;
+}
+
+  @media (max-width: 500px) {
+  .menu-nav img {
+    height: 70px;
+  }
+}
+
+/* style perso pour popup image */
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox-overlay.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  /*
+function PopupImage(img) { 
+titre="Agrandissement"; 
+w=open("",'image','width=400,height=400,toolbar=no,scrollbars=no,resizable=no'); 
+w.document.write("<HTML><HEAD><TITLE>"+titre+"</TITLE></HEAD>"); 
+w.document.write("<SCRIPT language=javascript>function checksize() { if (document.images[0].complete) { window.resizeTo(document.images[0].width+10,document.images[0].height+30); window.focus();} else { setTimeout('checksize()',250) } }</"+"SCRIPT>"); 
+w.document.write("<BODY onload='checksize()' onblur='window.close()' onclick='window.close()' leftMargin=0 topMargin=0 marginwidth=0 marginheight=0>");
+w.document.write("<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' height='100%'><TR>");
+w.document.write("<TD valign='middle' align='center'><IMG src='"+img+"' border=0 alt='Mon image'>"); 
+w.document.write("</TD></TR></TABLE>");
+w.document.write("</BODY></HTML>"); 
+w.document.close(); 
+} 
+*/
+function PopupImage(img) {
+  var overlay = document.getElementById("lightbox-overlay");
+  var image = overlay.querySelector("img");
+  image.src = img;
+  overlay.classList.add("visible");
+}
+//-->
+</SCRIPT>
+</head>
+
+<body onLoad="MM_preloadImages('images/m_home_o.jpg','images/m_scapes_o.jpg','images/m_portraits_o.jpg','images/m_animas_o.jpg','images/m_contact_o.jpg','images/m_dessins_o.jpg','images/m_home_3_o.jpg','images/m_abs-traits_o_up.jpg')">
+<div align="center" class="responsive-container">
+ <p class="Style4"><a href="http://www.alexandrezerbe.com/index.html"><img src="images/nom.jpg" width="445" height="29" /></a></p>
+ <table width="780" border="0" bgcolor="#DDE4E6" class="zerbe">
+    <tr>
+      <td colspan="3"><div align="center" class="menu-nav"><a href="scapes.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','images/m_scapes_o.jpg',1)"><img src="images/m_scapes.jpg" name="Image39" width="96" height="100" border="0"></a><a href="portraits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image40','','images/m_portraits_o.jpg',1)"><img src="images/m_portraits.jpg" name="Image40" width="96" height="100" border="0"></a><a href="animas.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image41','','images/m_animas_o.jpg',1)"><img src="images/m_animas.jpg" name="Image41" width="95" height="100" border="0"></a><a href="dessins.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image42','','images/m_dessins_o.jpg',1)"><img src="images/m_dessins.jpg" name="Image42" width="95" height="100" border="0"></a><a href="abs-traits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('abs-traits','','images/m_abs-traits_o.jpg',1)"><img src="images/m_abs-traits_o.jpg" alt="Abs-traits" name="abs-traits" width="95" height="100" border="0"></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image43','','images/m_contact_o.jpg',1)"><img src="images/m_contact.jpg" name="Image43" width="135" height="100" border="0"></a></div></td>
+    </tr>
+    <tr>
+      <td colspan="3"><p>&nbsp;</p>
+          <p align="center"><strong><span class="Style7">ABS-TRAITS</span></strong></p>
+          <p align="center"><strong><em>(REPENTIRS)</em></strong></p>
+      <p align="center">&nbsp;</p>      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits-no-22--bois-26x13-recto-2018.jpg')">
+        <div align="center"><img src="images/big/abs-traits_b/abs-traits-no-22--bois-26x13-recto-2018.jpg" alt="Cliquer pour agrandir" width="109" height="218" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits190.jpg')"><img src="images/big/abs-traits_b/abs-traits190.jpg" alt="Cliquer pour agrandir" width="96" height="236" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits-no-23--bois-26x13-recto-2018.jpg')">
+        <div align="center"><img src="images/big/abs-traits_b/abs-traits-no-23--bois-26x13-recto-2018.jpg" alt="Cliquer pour agrandir" width="109" height="218" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Abs-Traits No 22</em><br>
+acrylique sur bois, 26"x13"</div></td>
+      <td><div align="center"><em>Abs-Traits No 190</em><br>
+acrylique sur bois, 28"x11"</div></td>
+      <td><div align="center"><em>Abs-Traits No 23</em><br>
+acrylique sur bois, 26"x13"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits208b.jpg')"><img src="images/small/abs-traits/abs-traits208.jpg" alt="Cliquer pour agrandir" width="237" height="118" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 208</em><br>
+acrylique sur bois, 30"x50"</p>
+      </div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits205b.jpg')"><img src="images/small/abs-traits/abs-traits205.jpg" alt="Cliquer pour agrandir" width="160" height="200" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits211b.jpg')"><img src="images/small/abs-traits/abs-traits211.jpg" alt="Cliquer pour agrandir" width="85" height="200" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits212b.jpg')"><img src="images/small/abs-traits/abs-traits212.jpg" alt="Cliquer pour agrandir" width="100" height="200" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 205</em><br>
+acrylique sur toile, 30"x24"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 211</em><br>
+acrylique sur bois, 31"x13"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 212</em><br>
+acrylique sur toile, 20"x40"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits232recto.jpg')">
+      <div align="center"><img src="images/big/abs-traits_b/abs-traits232recto.jpg" alt="Cliquer pour agrandir" width="144" height="209" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits192b.jpg')"><img src="images/big/abs-traits_b/abs-traits192b.jpg" alt="Cliquer pour agrandir" width="163" height="217" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits232verso.jpg')">
+        <div align="center"><img src="images/big/abs-traits_b/abs-traits232verso.jpg" alt="Cliquer pour agrandir" width="144" height="209" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Abs-Traits No 232 (recto)</em><br>
+acrylique sur bois, 32"x22"</div></td>
+      <td><div align="center"><em>Abs-Traits No 192</em><br>
+acrylique sur toile, 48"x36"</div></td>
+      <td><div align="center"><em>Abs-Traits No 232 (verso)</em><br>
+acrylique sur bois, 32"x22"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits188b.jpg')"><img src="images/small/abs-traits/abs-traits188.jpg" alt="Cliquer pour agrandir" width="163" height="200" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits198b.jpg')"><img src="images/small/abs-traits/abs-traits198.jpg" alt="Cliquer pour agrandir" width="159" height="200" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits194b.jpg')"><img src="images/small/abs-traits/abs-traits194.jpg" alt="Cliquer pour agrandir" width="157" height="200" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 188</em><br>
+acrylique sur toile, 17"x14"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 198</em><br>
+acrylique sur toile, 60"x48"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 194</em><br>
+acrylique sur toile, 20"x16"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits153.jpg')">
+      <div align="center"><img src="images/big/abs-traits_b/abs-traits153.jpg" alt="Cliquer pour agrandir" width="59" height="243" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits213.jpg')"><img src="images/big/abs-traits_b/abs-traits213.jpg" alt="Cliquer pour agrandir" width="200" height="200" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits229b.jpg')">
+        <div align="center"><img src="images/big/abs-traits_b/abs-traits229b.jpg" alt="Cliquer pour agrandir" width="41" height="262" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Abs-Traits No 153</em><br>
+acrylique sur toile, 66"x16"</div></td>
+      <td><div align="center"><em>Abs-Traits No 213</em><br>
+acrylique sur bois, 28"x28"</div></td>
+      <td><div align="center"><em>Abs-Traits No 229</em><br>
+acrylique sur toile, 90"x14"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits201b.jpg')"><img src="images/small/abs-traits/abs-traits201.jpg" alt="Cliquer pour agrandir" width="199" height="200" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits197b.jpg')"><img src="images/big/abs-traits_b/abs-traits197b.jpg" alt="Cliquer pour agrandir" width="200" height="200" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits203b.jpg')"><img src="images/small/abs-traits/abs-traits203.jpg" alt="Cliquer pour agrandir" width="200" height="200" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 201</em><br>
+acrylique sur toile, 22"x22"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 197</em><br>
+acrylique sur toile, 36"x36"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 203</em><br>
+acrylique sur toile, 26.5"x26.5"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits181b.jpg')"><img src="images/small/abs-traits/abs-traits181.jpg" alt="Cliquer pour agrandir" width="166" height="200" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits191b.jpg')"><img src="images/big/abs-traits_b/abs-traits191b.jpg" alt="Cliquer pour agrandir" width="132" height="266" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits193b.jpg')"><img src="images/small/abs-traits/abs-traits193.jpg" alt="Cliquer pour agrandir" width="133" height="200" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 181</em><br>
+acrylique sur toile, 24"x20"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 191</em><br>
+acrylique sur toile, 80"x40"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 193</em><br>
+acrylique sur toile, 60"x40"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits157b.jpg')"><img src="images/small/abs-traits/abs-traits157.jpg" alt="Cliquer pour agrandir" width="149" height="149" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits156b.jpg')"><img src="images/big/abs-traits_b/abs-traits156b.jpg" alt="Cliquer pour agrandir" width="90" height="272" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits158b.jpg')"><img src="images/small/abs-traits/abs-traits158.jpg" alt="Cliquer pour agrandir" width="142" height="213" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 163</em><br>
+      acrylique sur toile, 26"x26"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 169</em><br>
+acrylique sur toile, 90"x30"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 165</em><br>
+acrylique sur toile, 72"x48"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits152b.jpg')">
+      <div align="center"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits170.jpg')"><img src="images/big/abs-traits_b/abs-traits170.jpg" alt="Cliquer pour agrandir" width="200" height="200" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits229b.jpg')">
+        <div align="center"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"></div></td>
+      <td><div align="center"><em>Abs-Traits No 170</em><br>
+acrylique sur toile, 24"x24"</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits152b.jpg')">
+      <div align="center"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits152b.jpg')"><img src="images/big/abs-traits_b/abs-traits152b.jpg" alt="Cliquer pour agrandir" width="63" height="220" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits229b.jpg')">
+        <div align="center"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"></div></td>
+      <td><div align="center"><em>Abs-Traits No 152</em><br>
+acrylique sur toile, 70"x20"</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>    </tr>
+    <tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits150b.jpg')"><img src="images/small/abs-traits/abs-traits150.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits146bb.jpg')"><img src="images/small/abs-traits/abs-traits146b.jpg" alt="Cliquer pour agrandir" width="200" height="256" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits151b.jpg')"><img src="images/small/abs-traits/abs-traits151.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 150</em><br>
+      acrylique sur toile, 48"x48"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 146</em><br>
+acrylique sur toile, 60"x48"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 151</em><br>
+acrylique sur toile, 36"x36"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits147-1b.jpg')"><img src="images/small/abs-traits/abs-traits147-1.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits148b.jpg')"><img src="images/small/abs-traits/abs-traits148.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits147-2b.jpg')"><img src="images/small/abs-traits/abs-traits147-2.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><em>Abs-Traits No 147 (1)</em><br>
+      acrylique sur toile, 60"x30"</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 148</em><br>
+acrylique sur toile, 60"x60"</p>
+      </div></td>
+      <td><div align="center"><em>Abs-Traits No 147 (2)</em><br>
+acrylique sur toile, 60"x30"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="249"><div align="center"></div></td>
+      <td width="268"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits132b.jpg')"><img src="images/small/abs-traits/abs-traits132.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="249"><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">
+          <p>&nbsp;</p>
+      </div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 132</em><br>
+acrylique sur toile, 48"x72"</p>
+      </div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits69rb.jpg')"><img src="images/small/abs-traits/abs-traits69r.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits129b.jpg')"><img src="images/small/abs-traits/abs-traits129.jpg" alt="Cliquer pour agrandir" width="116" height="263" border="0"  class="image"></a></div></td>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits69vb.jpg')"><img src="images/small/abs-traits/abs-traits69v.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td class="style1"><div align="center"><em>Abs-Traits No 69 (recto)</em><br>
+acrylique sur bois, 40&quot; de diam&egrave;tre</div></td>
+      <td><div align="center"><em>Abs-Traits No 129</em><br>
+      acrylique sur bois, 68&quot;x30'</div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 69 (verso)</em><br>
+acrylique sur bois, 40&quot; de diam&egrave;tre</p>
+      </div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits74rb.jpg')"><img src="images/small/abs-traits/abs-traits74r.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits68b.jpg')"><img src="images/big/abs-traits_b/abs-traits68b.jpg" alt="Cliquer pour agrandir" width="83" height="319" border="0"  class="image"></a></div></td>
+      <td><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits74vb.jpg')"><img src="images/small/abs-traits/abs-traits74v.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    </tr>
+    <tr>
+      <td class="style1"><div align="center"><em>Abs-Traits No 74 (recto)</em><br>
+acrylique sur bois, 11&quot;x25&quot;</div></td>
+      <td><div align="center"><em>Abs-Traits No 68</em><br>
+        acrylique sur bois, 96"x24"<br>
+      </div></td>
+      <td><div align="center">
+          <p><em>Abs-Traits No 74 (verso)</em><br>
+acrylique sur bois, 11&quot;x25&quot;</p>
+      </div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits3recto.jpg')">
+      <div align="center"><img src="images/big/abs-traits_b/abs-traits3recto.jpg" alt="Cliquer pour agrandir" width="242" height="120" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits3verso.jpg')">
+        <div align="center"><img src="images/big/abs-traits_b/abs-traits3verso.jpg" alt="Cliquer pour agrandir" width="242" height="120" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Abs-Traits No 3</em> (recto)<br>
+acrylique sur bois, 20"x40"</div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"><em>Abs-Traits No 3</em> (verso)<br>
+acrylique sur bois, 20"x40"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits3recto.jpg')">
+      <div align="center"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits21b.jpg')"><img src="images/big/abs-traits_b/abs-traits21b.jpg" alt="Cliquer pour agrandir" width="200" height="200" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/abs-traits_b/abs-traits3verso.jpg')">
+        <div align="center"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"></div></td>
+      <td><div align="center"><em>Abs-Traits No 21</em><br>
+huile sur caisson de bois, 19"x19"</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="style1">&nbsp;</td>
+    </tr>
+  <td colspan="3" class="style1"><div align="center">
+    <p class="style5">&nbsp;</p>
+  </div></td>
+  </tr>
+  </table> 
+ <div align="center" class="menu-nav">
+    <a href="scapes.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('scapes','','images/m_scapes_o.jpg',1)"><img src="images/m_scapes.jpg" alt="Scapes" name="scapes" width="96" height="100" border="0"></a><a href="portraits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('portraits','','images/m_portraits_o.jpg',1)"><img src="images/m_portraits.jpg" alt="portraits" name="portraits" width="96" height="100" border="0"></a><a href="animas.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('animas','','images/m_animas_o.jpg',1)"><img src="images/m_animas.jpg" alt="Animas" name="animas" width="95" height="100" border="0"></a><a href="dessins.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('dessins','','images/m_dessins_o.jpg',1)"><img src="images/m_dessins.jpg" alt="Dessins" name="dessins" width="95" height="100" border="0"></a><a href="abs-traits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image44','','images/m_abs-traits_o_up.jpg',1)"><img src="images/m_abs-traits_o.jpg" name="Image44" width="95" height="100" border="0"></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contact','','images/m_contact_o.jpg',1)"><img src="images/m_contact.jpg" alt="Contact" name="contact" width="135" height="100" border="0"></a>
+  </div>
+<span class="zerbe">&copy; 2006-2025. Alexandre Zerb&eacute;. Tous droits r&eacute;serv&eacute;s.</span></div>
+<div id="lightbox-overlay" onclick="this.classList.remove('visible')">
+  <img src="" alt="Agrandissement">
+</div>
+
+</body>
+</html>
+

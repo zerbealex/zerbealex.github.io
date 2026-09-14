@@ -1,0 +1,913 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>alexandrezerb&eacute; : animas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.zerbe {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #5A606E;
+}
+body {
+	background-color: #dfe3e6;
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+img, table {
+  max-width: 100%;
+  height: auto;
+}
+.Style4 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.style5 {font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.Style6 {font-size: 14px}
+.Style7 {
+	font-size: small
+}
+.responsive-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table td {
+  word-break: break-word;
+}
+ .menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* aligne les images par le bas */
+  gap: 0px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.menu-nav img {
+  height: 100px;       /* hauteur identique pour tous */
+  width: auto;         /* largeur auto = conserve le ratio */
+  display: block;
+}
+
+  @media (max-width: 500px) {
+  .menu-nav img {
+    height: 70px;
+  }
+}
+
+/* style perso pour popup image */
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox-overlay.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  /*
+function PopupImage(img) { 
+titre="Agrandissement"; 
+w=open("",'image','width=400,height=400,toolbar=no,scrollbars=no,resizable=no'); 
+w.document.write("<HTML><HEAD><TITLE>"+titre+"</TITLE></HEAD>"); 
+w.document.write("<SCRIPT language=javascript>function checksize() { if (document.images[0].complete) { window.resizeTo(document.images[0].width+10,document.images[0].height+30); window.focus();} else { setTimeout('checksize()',250) } }</"+"SCRIPT>"); 
+w.document.write("<BODY onload='checksize()' onblur='window.close()' onclick='window.close()' leftMargin=0 topMargin=0 marginwidth=0 marginheight=0>");
+w.document.write("<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' height='100%'><TR>");
+w.document.write("<TD valign='middle' align='center'><IMG src='"+img+"' border=0 alt='Mon image'>"); 
+w.document.write("</TD></TR></TABLE>");
+w.document.write("</BODY></HTML>"); 
+w.document.close(); 
+} 
+*/
+function PopupImage(img) {
+  var overlay = document.getElementById("lightbox-overlay");
+  var image = overlay.querySelector("img");
+  image.src = img;
+  overlay.classList.add("visible");
+}
+//-->
+</SCRIPT>
+</head>
+
+<body onLoad="MM_preloadImages('images/m_home_o.jpg','images/m_scapes_o.jpg','images/m_portraits_o.jpg','images/m_animas_o.jpg','images/m_contact_o.jpg','images/m_home_3_o.jpg','images/m_dessins_o.jpg','images/m_abs-traits_o.jpg','images/m_animas_o_up.jpg')">
+<div align="center" class="responsive-container">
+  <p class="Style4"><a href="http://www.alexandrezerbe.com/index.html"><img src="images/nom.jpg" width="445" height="29" /></a></p>
+  <table width="790" border="0" bgcolor="#DDE4E6" class="zerbe">
+    <tr>
+      <td colspan="3"><div align="center" class="menu-nav"><a href="scapes.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image84','','images/m_scapes_o.jpg',1)"><img src="images/m_scapes.jpg" name="Image84" width="96" height="100" border="0"></a><a href="portraits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image85','','images/m_portraits_o.jpg',1)"><img src="images/m_portraits.jpg" name="Image85" width="96" height="100" border="0"></a><a href="animas.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('animas','','images/m_animas_o.jpg',1)"><img src="images/m_animas_o.jpg" alt="Animas" name="animas" width="95" height="100" border="0"></a><a href="dessins.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image86','','images/m_dessins_o.jpg',1)"><img src="images/m_dessins.jpg" name="Image86" width="95" height="100" border="0"></a><a href="abs-traits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image87','','images/m_abs-traits_o.jpg',1)"><img src="images/m_abs-traits.jpg" name="Image87" width="95" height="100" border="0"></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image88','','images/m_contact_o.jpg',1)"><img src="images/m_contact.jpg" name="Image88" width="135" height="100" border="0"></a></div></td>
+    </tr>
+    <tr>
+      <td colspan="3"><p>&nbsp;</p>
+          <p align="center"><em><strong><span class="Style6">ANIMAS</span></strong></em></p>
+      <p align="center">&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/animas_b/Leopard-de-l-Amour-(panthera-pardus-orientalis)-48x60-2023.jpg')">
+        <div align="center"><img src="images/big/animas_b/Leopard-de-l-Amour-(panthera-pardus-orientalis)-48x60-2023.jpg" alt="Cliquer pour agrandir" width="229" height="182" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/Le-chien-sur-l-eau-54x40-2024.jpg')"><img src="images/big/animas_b/Le-chien-sur-l-eau-54x40-2024.jpg" alt="Cliquer pour agrandir" width="160" height="216" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/Zebre-parmi-les-herbes-48x72-2023.jpg')">
+        <div align="center"><img src="images/big/animas_b/Zebre-parmi-les-herbes-48x72-2023.jpg" alt="Cliquer pour agrandir" width="251" height="167" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>L&eacute;opard de l'Amour (Panthera Pardus Orientalis) <img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /></em><br>
+acrylique sur toile, 48&quot;x60"</div></td>
+      <td><div align="center"><em>Le chien sur l'eau</em><br>
+acrylique sur toile, 54&quot;x40"</div></td>
+      <td><div align="center"><em>Z&egrave;bre p&acirc;rmi les herbes</em><em> </em><br>
+acrylique sur toile, 48&quot;x72"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/animas_b/a90b.jpg')"><img src="images/small/animas/a90.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a92b.jpg')"><img src="images/small/animas/a92.jpg" alt="Cliquer pour agrandir" width="132" height="200" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a91b.jpg')">
+        <div align="center"><img src="images/small/animas/a91.jpg" alt="Cliquer pour agrandir" width="233" height="186" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>&Eacute;meu (soi-disant) &eacute;mouvant</em><br>
+acrylique sur toile, 72&quot;x48"</div></td>
+      <td><div align="center"><em>Paon</em><br>
+acrylique sur toile, 60&quot;x40"</div></td>
+      <td><div align="center"><em>Bird</em> <em><img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /></em><br>
+acrylique sur toile, 60&quot;x74"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')"><img src="images/small/animas/a89.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>              </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/scapes_b/s179b.jpg')"><img src="images/small/scapes/s179.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a87b.jpg')">
+        <div align="center"><img src="images/small/animas/a87.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Caribou</em><br>
+acrylique sur toile, 72&quot;x48"</div></td>
+      <td><div align="center"><em>Urubus sur Cuba <img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /><br />
+      </em>acrylique sur toile, 48&quot;x60&quot;</div></td>
+      <td><div align="center"><em>Saule pleureur sur flamants roses</em><br>
+acrylique sur toile, 74&quot;x58"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr><td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <div align="center"><a href="javascript:PopupImage('images/big/animas_b/a67b.jpg')"><a href="javascript:PopupImage('images/big/animas_b/a67b.jpg')"><img src="images/small/animas/a67.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>      </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a85b.jpg')"><img src="images/small/animas/a85.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a86b.jpg')">
+        <div align="center"><img src="images/small/animas/a86.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>La plasticit&eacute; du rhinoc&eacute;ros</em><br>
+acrylique sur toile, 60"x36"</div></td>
+      <td><div align="center"><em>&Agrave; vau l'eau</em><br>
+acrylique sur toile, 48&quot;x60"</div></td>
+      <td><div align="center"><em>Le d&eacute;jeuner sur l'eau</em><br>
+acrylique sur toile, 30"x60"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a89b.jpg')">
+        <div align="center">
+          <div align="center"><a href="javascript:PopupImage('images/big/animas_b/a69b.jpg')"><a href="javascript:PopupImage('images/big/animas_b/a69b.jpg')"><img src="images/small/animas/a69.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>      </td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a68b.jpg')"><img src="images/small/animas/a68.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a63b.jpg')">
+        <div align="center"><img src="images/small/animas/a63.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Circus Humanus</em><br>
+acrylique sur toile, 60&quot;x48"</div></td>
+      <td><div align="center"><em>Rapace (Bird of Prey)</em> <em><img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /></em><br>
+acrylique sur toile, 48&quot;x30"</div></td>
+      <td><div align="center"><em>L'envers du d&eacute;cor</em><br>
+acrylique sur toile, 60"x40"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a56b.jpg')">
+        <div align="center">
+          <div align="center"><a href="javascript:PopupImage('images/big/animas_b/a88b.jpg')"><img src="images/small/animas/a88.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a70b.jpg')"><img src="images/small/animas/a70.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a72b.jpg')">
+        <div align="center"><img src="images/small/animas/a72.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>La parallaxe du pyrrhocorax</em><br>
+        acrylique sur toile, 72&quot;x36&quot;</div></td>
+      <td><div align="center"><em>Yellow Black Bird</em><br>
+acrylique sur toile, 24&quot;x24&quot;</div></td>
+      <td><div align="center"><em>Le corbeau encha&icirc;n&eacute;</em><br>
+        encre sur papier</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a56b.jpg')">
+        <div align="center">
+          <div align="center"><a href="javascript:PopupImage('images/big/animas_b/a60b.jpg')"><img src="images/small/animas/a60.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a62b.jpg')"><img src="images/small/animas/a62.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a58b.jpg')">
+        <div align="center"><img src="images/small/animas/a58.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Le chien (dans la dune)</em><br>
+acrylique sur toile, 72"x36"</div></td>
+      <td><div align="center"><em>Locus Am&oelig;nus (La nature des choses)</em><br>
+acrylique sur toile, 60&quot;x48"</div></td>
+      <td><div align="center"><em>La rue et l'oiseau</em><br>
+acrylique sur toile, 80"x40"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a17b.jpg')">
+        <div align="center">
+          <div align="center"><img src="images/small/animas/a17.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a61b.jpg')"><img src="images/small/animas/a61.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a22b.jpg')">
+        <div align="center"><img src="images/small/animas/a22.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Aquadelirium Tremens</em> <em><img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"></em><br>
+acrylique sur toile, 70&quot;x60"</div></td>
+      <td><div align="center"><em>Le complexe du homard</em> <em><img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"></em><br>
+acrylique sur toile, 58"x48"</div></td>
+      <td><div align="center"><em>Black Bird Blue</em> <em><img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"></em><br>
+acrylique sur toile, 60"x48"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a59b.jpg')">
+        <div align="center">
+          <div align="center"><img src="images/small/animas/a59.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a15b.jpg')"><img src="images/small/animas/a15.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a57b.jpg')">
+        <div align="center"><img src="images/small/animas/a57.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>L'oeil du boeuf</em><br>
+acrylique sur toile, 72"x48"</div></td>
+      <td><div align="center"><em>Pachyderm Parking (ou les m&eacute;moires d'un &eacute;l&eacute;phant)<img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /></em><br>
+acrylique sur toile, 60&quot;x40&quot;</div></td>
+      <td><div align="center"><em>&Agrave; rebours</em> <em><img src="images/rouge.gif" alt="vendue" width="10" height="10" align="absmiddle" /></em><br>
+acrylique sur toile, 72"x48"</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a56b.jpg')">
+        <div align="center">
+          <div align="center"><img src="images/small/animas/a56.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a13b.jpg')"><img src="images/small/animas/a13.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a55b.jpg')">
+        <div align="center"><img src="images/small/animas/a55.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>Les Primates</em><br>
+        acrylique sur toile, 60&quot;x30&quot;</div></td>
+      <td><div align="center"><em>Le corbeau</em> (propagandes)<br>
+acrylique sur toile, 30&quot;x60&quot;</div></td>
+      <td><div align="center"><em>Les Sourici&egrave;res</em><br>
+acrylique sur toile, 60&quot;x30&quot;</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a53b.jpg')">
+        <div align="center">
+          <div align="center"><img src="images/small/animas/a53.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+        </div>
+      </a></td>
+      <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a46b.jpg')"><img src="images/small/animas/a46.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+      <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a54b.jpg')">
+        <div align="center"><img src="images/small/animas/a54.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </a></td>
+    </tr>
+    <tr valign="top">
+      <td><div align="center"><em>&Eacute;lizab&eacute;thain</em><br>
+        acrylique sur toile, 40&quot;x30&quot;</div></td>
+      <td><div align="center"><em>Phacomachie</em><br>
+        acrylique sur toile, 40&quot;x30&quot;</div></td>
+      <td><div align="center"><em>Au pied</em> <em><img src="images/rouge.gif" alt="" width="10" height="10" align="absmiddle"></em><br>
+        acrylique sur toile, 48&quot;x24&quot;</div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a50b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a50.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a52b.jpg')"><img src="images/small/animas/a52.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a47b.jpg')">
+      <div align="center"><img src="images/small/animas/a47.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Paroles and Parrots</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur toile, 48&quot;x24&quot;</div></td>
+    <td><div align="center"><em>Le Paon des Vanit&eacute;s</em><br>
+      acrylique sur toile, 72&quot;x30&quot;</div></td>
+    <td><div align="center"><em>Miro (le chat)</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur toile, 48&quot;x24&quot;</div></td>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a64b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a64.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a66b.jpg')"><img src="images/small/animas/a66.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a65b.jpg')">
+      <div align="center"><img src="images/small/animas/a65.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Sleeping Dog</em><br>
+      aquarelle et encre sur papier, 16.5&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Walking Dog</em><br>
+aquarelle et encre sur papier, 16.5&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Sleeping Dog</em><br>
+      aquarelle et encre sur papier, 16.5&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a42b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a42.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a40b.jpg')"><img src="images/small/animas/a40.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a41b.jpg')">
+      <div align="center"><img src="images/small/animas/a41.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Le Corbeau <img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"> <em>La Mouette</em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>H&eacute;ron Tachet&eacute;</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a29b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a29.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a30b.jpg')"><img src="images/small/animas/a30.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a28b.jpg')">
+      <div align="center"><img src="images/small/animas/a28.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Apn&eacute;e</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"> <em>Phacoch&egrave;re</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Omar</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a36b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a36.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a71b.jpg')"><img src="images/small/animas/a71.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a>
+      
+    </div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a37b.jpg')">
+      <div align="center"><img src="images/small/animas/a37.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Les Chiens Errants</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>L'oiseau moqueur ne rit plus</em><br>
+encre et aquarelle sur papier<em> 9&quot;x7&quot;</em></div></td>
+    <td><div align="center"><em>White Dog</em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a32b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a32.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a27b.jpg')"><img src="images/small/animas/a27.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a44b.jpg')">
+      <div align="center"><img src="images/small/animas/a44.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Crapaud &Eacute;crapouti</em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Face de Bouc <img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Dead Bird</em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a26b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a26.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a33b.jpg')"><img src="images/small/animas/a33.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a31b.jpg')">
+      <div align="center"><img src="images/small/animas/a31.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>Ours Ob&egrave;se</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"> <em>Chat Noir</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Le Dernier Ovibos</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a43b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a43.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a39b.jpg')"><img src="images/small/animas/a39.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a45b.jpg')">
+      <div align="center"><img src="images/small/animas/a45.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>November Bird</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>October Birds</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+    <td><div align="center"><em>Oie</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      encre sur papier, 18&quot;x12&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><a href="javascript:PopupImage('images/big/animas_b/a18b.jpg')">
+      <div align="center">
+        <div align="center"><img src="images/small/animas/a18.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+      </div>
+    </a></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a11b.jpg')"><img src="images/small/animas/a11.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a19b.jpg')">
+      <div align="center"><img src="images/small/animas/a19.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><em>September Birds</em> <img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"><br>
+      acrylique sur toile, 72&quot;x48&quot;</div></td>
+    <td><div align="center"><em>Sanglier ou La condition humaine</em> &nbsp;<img src="images/rouge.gif" alt="" width="10" height="10" align="absmiddle"><br>
+acrylique sur toile, 36&quot;x48&quot;</div></td>
+    <td><div align="center"><em>Bird On The Wire <img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur papier, 22&quot;x15&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="264"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a10b.jpg')"><img src="images/small/animas/a10.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="251"><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a24b.jpg')"><img src="images/small/animas/a24.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td width="261"><a href="javascript:PopupImage('images/big/animas_b/a12b.jpg')">
+      <div align="center"><img src="images/small/animas/a12.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></div>
+    </a></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"> <em>La libert&eacute; est un loup</em> <em><img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur toile, 40&quot;x30&quot;</div></td>
+    <td><div align="center"> <em>L'enjeu de l'oie </em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"><br>
+      acrylique sur toile, 60&quot;x30&quot;</div></td>
+    <td><div align="center"> <em>Gr&eacute;garisme</em> <em><img src="images/rouge.gif" alt="vendu" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur toile, 40&quot;x30&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a09b.jpg')"><img src="images/small/animas/a09.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a51b.jpg')"><img src="images/small/animas/a51.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a07b.jpg')"><img src="images/small/animas/a07.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"> <em>Manteuse</em> <em><img src="images/rouge.gif" width="10" height="10" align="absmiddle"></em><br>
+      acrylique sur toile, 48&quot;x24&quot;</div></td>
+    <td><div align="center"> <em>La pomme, la plume et le serpent</em><br>
+      acrylique sur toile, 48&quot;x24&quot;</div></td>
+    <td><div align="center"> <em>Le sycophante &nbsp;<img src="images/rouge.gif" width="10" height="10" align="absmiddle"><br>
+    </em>acrylique sur toile, 48&quot;x24&quot;</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a05b.jpg')"><img src="images/small/animas/a05.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr valign="top">
+    <td class="style1"><div align="center"></div></td>
+    <td><div align="center"><em>Ours bipolaire</em><br>
+graphite sur bois, 48&quot; de diam&egrave;tre<br>
+    </div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a02b.jpg')"><img src="images/small/animas/a02.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr valign="top">
+    <td class="style1"><div align="center"></div></td>
+    <td><div align="center"><em>L'ours blanc</em> <em><img src="images/rouge.gif" alt="" width="10" height="10" align="absmiddle"></em><br>
+acrylique sur toile, 72&quot;x30&quot;<br>
+    </div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a03b.jpg')"><img src="images/small/animas/a03.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a16b.jpg')"><img src="images/small/animas/a16.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"><a href="javascript:PopupImage('images/big/animas_b/a01b.jpg')"><img src="images/small/animas/a01.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+  </tr>
+  <tr valign="top">
+    <td class="style1"><div align="center"> <em>Sans titre (<em>chien</em>)&nbsp;<img src="images/rouge.gif" width="10" height="10" align="absmiddle"> <br>
+      acrylique sur papier 22&quot;x30&quot;</em></div></td>
+    <td><div align="center"><em>Good Dog </em><img src="images/rouge.gif" alt="" width="10" height="10" align="absmiddle"><br>
+acrylique sur toile, 36&quot;x24&quot;<br>
+    </div></td>
+    <td><div align="center"><em>Sancho&nbsp;</em> <img src="images/rouge.gif" width="10" height="10" align="absmiddle"><br>
+acrylique sur toile, 48&quot;x30&quot; </div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td><div align="center"></div></td>
+    <td><div align="center"></div>
+      <div align="center"><a href="javascript:PopupImage('images/big/animas_b/a06b.jpg')"><img src="images/small/animas/a06.jpg" alt="Cliquer pour agrandir" border="0"  class="image"></a></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr valign="top">
+    <td class="style1"><div align="center"></div></td>
+    <td><div align="center"><em>Pisciculture<br>
+    </em>acrylique sur toile, 20&quot;x50&quot;<br>
+    </div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td class="style1">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td class="style1">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="Style7"><p align="justify"><br>
+        Brouillons les pistes...<br>
+&Agrave; travers le filtre zoomorphique, ces animaux sont une projection de nos rapports humains et de certaines r&eacute;alit&eacute;s sociales, des portraits all&eacute;goriques et critiques de nos travers humains et de nos mythologies. Une projection grand angle dans un miroir d&eacute;formant refl&eacute;tant la nature humaine, notre condition parfois animale,  nos actions et r&eacute;actions souvent reptiliennes,  nos diverses tendances au gr&eacute;garisme,  la bestialit&eacute; de nos rapports humains,  notre vision parfois monoscopique,  notre m&eacute;moire collective ethnocentrique peut-&ecirc;tre trop souvent s&eacute;lective...</p>      </td>
+  </tr>
+  <tr>
+    <td colspan="3" class="style1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="style1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="style1"><div align="center">
+      <p class="style5">&nbsp;</p>
+    </div></td>
+  </tr>
+  <tr>
+  <td colspan="3"><div align="center" class="menu-nav"><a href="scapes.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('scapes','','images/m_scapes_o.jpg',1)"><img src="images/m_scapes.jpg" alt="Scapes" name="scapes" width="96" height="100" border="0"></a><a href="portraits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('portraits','','images/m_portraits_o.jpg',1)"><img src="images/m_portraits.jpg" alt="Portraits" name="portraits" width="96" height="100" border="0"></a><a href="animas.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image89','','images/m_animas_o_up.jpg',1)"><img src="images/m_animas_o.jpg" name="Image89" width="95" height="100" border="0"></a><a href="dessins.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('dessins','','images/m_dessins_o.jpg',1)"><img src="images/m_dessins.jpg" alt="Dessins" name="dessins" width="95" height="100" border="0"></a><a href="abs-traits.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('abs-traits','','images/m_abs-traits_o.jpg',1)"><img src="images/m_abs-traits.jpg" alt="Abs-traits" name="abs-traits" width="95" height="100" border="0"></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contact','','images/m_contact_o.jpg',1)"><img src="images/m_contact.jpg" alt="Contact" name="contact" width="135" height="100" border="0"></a></div></td>
+  </tr>
+  </table>
+  
+  <p class="zerbe">&copy; 2006-2025. Alexandre Zerb&eacute;. Tous droits r&eacute;serv&eacute;s.</p>
+</div>
+<div id="lightbox-overlay" onclick="this.classList.remove('visible')">
+  <img src="" alt="Agrandissement">
+</div>
+
+</body>
+</html>
+
