@@ -185,6 +185,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function generateStars() {
+    const element = document.getElementById("stars-line");
+    const width = element.parentElement.clientWidth;
+
+    // Approximation de la largeur d'un caractère "*"
+    const starWidth = 8;
+
+    const count = Math.floor(width / starWidth);
+
+    element.textContent = "*".repeat(count);
+}
+
+generateStars();
+window.addEventListener("resize", generateStars);
+
 
 //-->
 </script>
@@ -203,20 +218,14 @@ document.addEventListener('DOMContentLoaded', function () {
           <p align="center">&nbsp;</p>
           <p align="center"></p></td>
     </tr>
-    <td class="style1"> <blockquote> 
-        <blockquote> 
-          <blockquote>
-            <p align="center" class="Style16"><span class="Style11">****************************************************************</span></p>
-            <p align="center" class="Style16">Blossoms</p>
-            <p align="center" class="Style16">(TAKE OUT)</p>
-            <blockquote>
-              <div align="center">
-                <p class="Style20">2021</p>
-              </div>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote></td>
+    <td class="style1"> 
+		<div align="center">
+		    <p class="Style16 id="stars-line"></p>
+		    <p class="Style16">Blossoms</p>
+		    <p class="Style16">(TAKE OUT)</p>
+		    <p class="Style20">2021</p>
+ 	 	</div>
+	</td>
     </tr>
   </table>
   <table bgcolor="#DDE4E6" class="zerbe responsive-table">
