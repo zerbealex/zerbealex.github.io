@@ -197,8 +197,7 @@ function generateStars() {
     element.textContent = "*".repeat(count);
 }
 
-generateStars();
-window.addEventListener("resize", generateStars);
+document.addEventListener('DOMContentLoaded', generateStars());
 
 
 //-->
