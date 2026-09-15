@@ -185,21 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function generateStars() {
-    const element = document.getElementById("stars-line");
-    const width = element.parentElement.clientWidth;
-
-    // Approximation de la largeur d'un caractère "*"
-    const starWidth = 8;
-
-    const count = Math.floor(width / starWidth);
-
-    element.textContent = "*".repeat(count);
-}
-
-document.addEventListener('DOMContentLoaded', generateStars());
-
-
 //-->
 </script>
 </head>
@@ -219,7 +204,7 @@ document.addEventListener('DOMContentLoaded', generateStars());
     </tr>
     <td class="style1"> 
 		<div align="center">
-		    <p class="Style16 id="stars-line"></p>
+		    <p class="Style16 id="stars-line">*****************</p>
 		    <p class="Style16">Blossoms</p>
 		    <p class="Style16">(TAKE OUT)</p>
 		    <p class="Style20">2021</p>
